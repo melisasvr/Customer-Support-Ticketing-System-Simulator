@@ -1,0 +1,42 @@
+CUSTOMER SUPPORT TICKET REPORT
+================================================================================
+Ticket ID: TKT50573
+Customer ID: CUST005
+Customer Name: Emma Davis
+Date: 2025-12-17 12:32:04
+================================================================================
+
+CUSTOMER QUERY:
+When will my monitor ship? I ordered it 2 days ago and it's still processing.
+
+================================================================================
+TICKET CLASSIFICATION:
+Intent: order_status
+Priority: normal
+Sentiment Score: 0.80
+Escalated: No
+
+================================================================================
+RESOLUTION FLOW:
+  • Intent classified as: order_status (Priority: normal)
+  • General agent handled query
+  • ✓ Auto-approved (quality score: 0.80)
+  • ✓ Response approved and sent to customer
+
+================================================================================
+FINAL RESPONSE:
+Hi Emma Davis,
+
+Thank you for contacting us!
+
+I'm here to help with your inquiry. To provide you with the most accurate information, could you please provide:
+- Your order number (if this is order-related)
+- A brief description of what you need assistance with
+- Any relevant dates or details
+
+Our team is committed to resolving your concern as quickly as possible.
+
+Best regards,
+Customer Support Team
+
+================================================================================

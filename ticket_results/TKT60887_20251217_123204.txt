@@ -1,0 +1,57 @@
+CUSTOMER SUPPORT TICKET REPORT
+================================================================================
+Ticket ID: TKT60887
+Customer ID: CUST001
+Customer Name: Alice Johnson
+Date: 2025-12-17 12:32:04
+================================================================================
+
+CUSTOMER QUERY:
+I received my laptop but it's not what I ordered. I want to return it and get a refund immediately!
+
+================================================================================
+TICKET CLASSIFICATION:
+Intent: returns
+Priority: high
+Sentiment Score: 0.90
+Escalated: No
+
+================================================================================
+RESOLUTION FLOW:
+  • Intent classified as: returns (Priority: high)
+  • Returns agent initiated return process
+  • ✓ Auto-approved (quality score: 0.90)
+  • ✓ Response approved and sent to customer
+
+================================================================================
+FINAL RESPONSE:
+Dear Alice Johnson,
+
+I sincerely apologize for any issues with your order. I'm here to help you with the return process.
+
+**Return Policy:**
+- Return window: 30 days from delivery
+- Condition required: unused and in original packaging
+- Refund processing: 5-7 business days
+- Return shipping: free for premium members
+
+**How to Return Your Item:**
+
+1. **Initiate Return:** We'll email you a return authorization within 24 hours
+2. **Pack the Item:** Use original packaging if possible
+3. **Ship It Back:** Use the prepaid label we provide (or arrange your own shipping)
+4. **Get Your Refund:** Once we receive and inspect the item, your refund will be processed
+
+**What We Need From You:**
+- Order number (if available)
+- Reason for return
+- Photos of the item (if damaged or incorrect)
+
+I've flagged your case for priority processing. You should receive your return instructions within 24 hours.
+
+We value your business and want to make this right.
+
+Best regards,
+Returns Department
+
+================================================================================

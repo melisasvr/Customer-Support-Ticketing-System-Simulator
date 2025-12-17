@@ -1,0 +1,58 @@
+CUSTOMER SUPPORT TICKET REPORT
+================================================================================
+Ticket ID: TKT82072
+Customer ID: CUST004
+Customer Name: David Brown
+Date: 2025-12-17 12:32:04
+================================================================================
+
+CUSTOMER QUERY:
+Why am I being charged late fees? This is ridiculous! I paid on time!
+
+================================================================================
+TICKET CLASSIFICATION:
+Intent: billing
+Priority: high
+Sentiment Score: 0.95
+Escalated: No
+
+================================================================================
+RESOLUTION FLOW:
+  • Intent classified as: billing (Priority: high)
+  • Billing agent handled query. Balance: $-120.5
+  • ✓ Auto-approved (quality score: 0.95)
+  • ✓ Response approved and sent to customer
+
+================================================================================
+FINAL RESPONSE:
+Dear David Brown,
+
+Thank you for contacting us regarding your billing concern.
+
+**Current Account Status:**
+- Account Balance: $120.50 (amount owed)
+- Account Tier: Standard
+
+I understand you have questions about the charges on your account. Let me provide some clarity:
+
+**Our Billing Policy:**
+- Payment is due within 15 days of invoice
+- Initial late fee: $10 after the due date
+- Additional fees: $5 per week thereafter
+
+**Available Options:**
+1. Make a one-time payment to clear your balance
+2. Set up a payment plan (available for balances over $100)
+3. Contact us to discuss your specific situation
+
+If you believe there has been an error, please provide:
+- Date of your payment
+- Payment confirmation number
+- Any relevant documentation
+
+We're here to help resolve this fairly and quickly.
+
+Best regards,
+Billing Support Team
+
+================================================================================

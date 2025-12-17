@@ -1,0 +1,71 @@
+CUSTOMER SUPPORT SUMMARY REPORT
+================================================================================
+Generated: 2025-12-17 12:32:04
+================================================================================
+
+STATISTICS:
+Total tickets processed: 8
+Escalated to human review: 0
+Auto-resolved: 8
+
+INTENT DISTRIBUTION:
+  • returns: 1
+  • order_status: 2
+  • billing: 2
+  • tech_support: 2
+  • general: 1
+
+AVERAGE QUALITY SCORE: 0.89
+
+================================================================================
+TICKET DETAILS:
+================================================================================
+
+
+Ticket: TKT60887
+Customer: Alice Johnson (CUST001)
+Intent: returns | Priority: high | Escalated: No
+Query: I received my laptop but it's not what I ordered. I want to return it and get a refund immediately!
+---
+
+Ticket: TKT31398
+Customer: Bob Smith (CUST002)
+Intent: order_status | Priority: normal | Escalated: No
+Query: My headphones haven't arrived yet. Where is my order ORD12346?
+---
+
+Ticket: TKT82072
+Customer: David Brown (CUST004)
+Intent: billing | Priority: high | Escalated: No
+Query: Why am I being charged late fees? This is ridiculous! I paid on time!
+---
+
+Ticket: TKT44698
+Customer: Carol White (CUST003)
+Intent: tech_support | Priority: normal | Escalated: No
+Query: My WiFi keeps disconnecting. Can you help me troubleshoot?
+---
+
+Ticket: TKT50573
+Customer: Emma Davis (CUST005)
+Intent: order_status | Priority: normal | Escalated: No
+Query: When will my monitor ship? I ordered it 2 days ago and it's still processing.
+---
+
+Ticket: TKT71384
+Customer: Frank Miller (CUST006)
+Intent: general | Priority: normal | Escalated: No
+Query: The mouse I received is defective. The left click doesn't work properly.
+---
+
+Ticket: TKT23689
+Customer: Grace Wilson (CUST007)
+Intent: tech_support | Priority: normal | Escalated: No
+Query: My app keeps crashing every time I try to log in. Please help!
+---
+
+Ticket: TKT20698
+Customer: Henry Taylor (CUST008)
+Intent: billing | Priority: normal | Escalated: No
+Query: I can't afford to pay $200 right now. Can I set up a payment plan?
+---

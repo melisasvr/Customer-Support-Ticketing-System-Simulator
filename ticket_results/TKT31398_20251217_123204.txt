@@ -1,0 +1,42 @@
+CUSTOMER SUPPORT TICKET REPORT
+================================================================================
+Ticket ID: TKT31398
+Customer ID: CUST002
+Customer Name: Bob Smith
+Date: 2025-12-17 12:32:04
+================================================================================
+
+CUSTOMER QUERY:
+My headphones haven't arrived yet. Where is my order ORD12346?
+
+================================================================================
+TICKET CLASSIFICATION:
+Intent: order_status
+Priority: normal
+Sentiment Score: 0.80
+Escalated: No
+
+================================================================================
+RESOLUTION FLOW:
+  • Intent classified as: order_status (Priority: normal)
+  • General agent handled query
+  • ✓ Auto-approved (quality score: 0.80)
+  • ✓ Response approved and sent to customer
+
+================================================================================
+FINAL RESPONSE:
+Hi Bob Smith,
+
+Thank you for contacting us!
+
+I'm here to help with your inquiry. To provide you with the most accurate information, could you please provide:
+- Your order number (if this is order-related)
+- A brief description of what you need assistance with
+- Any relevant dates or details
+
+Our team is committed to resolving your concern as quickly as possible.
+
+Best regards,
+Customer Support Team
+
+================================================================================

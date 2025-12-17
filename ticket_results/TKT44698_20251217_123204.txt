@@ -1,0 +1,52 @@
+CUSTOMER SUPPORT TICKET REPORT
+================================================================================
+Ticket ID: TKT44698
+Customer ID: CUST003
+Customer Name: Carol White
+Date: 2025-12-17 12:32:04
+================================================================================
+
+CUSTOMER QUERY:
+My WiFi keeps disconnecting. Can you help me troubleshoot?
+
+================================================================================
+TICKET CLASSIFICATION:
+Intent: tech_support
+Priority: normal
+Sentiment Score: 0.95
+Escalated: No
+
+================================================================================
+RESOLUTION FLOW:
+  • Intent classified as: tech_support (Priority: normal)
+  • Tech support agent provided troubleshooting steps
+  • ✓ Auto-approved (quality score: 0.95)
+  • ✓ Response approved and sent to customer
+
+================================================================================
+FINAL RESPONSE:
+Hi Carol White,
+
+I'd be happy to help you resolve your technical issue! As a premium member, you have access to our technical support with 2 hours response time.
+
+**Troubleshooting Steps:**
+
+Restart router, check if other devices connect, verify password
+
+**Additional Recommendations:**
+- Ensure your device/app is updated to the latest version
+- Check your internet connection if the issue is online
+- Restart your device after making changes
+
+**Next Steps:**
+Please try these troubleshooting steps and let us know if the issue persists. If you continue to experience problems:
+- Reply to this email with details of what you've tried
+- Include any error messages you're seeing
+- Our team will prioritize your case
+
+We're committed to getting you back up and running quickly!
+
+Best regards,
+Technical Support Team
+
+================================================================================

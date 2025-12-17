@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Support Ticketing Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .stat-card h3 {
+            color: #666;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .stat-card .number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .chart-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .chart-card h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+
+        .tickets-container {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .tickets-container h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .ticket-card {
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+
+        .ticket-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+
+        .ticket-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .ticket-id {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .badge {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .badge.returns { background: #ffebee; color: #c62828; }
+        .badge.billing { background: #fff3e0; color: #e65100; }
+        .badge.tech_support { background: #e3f2fd; color: #1565c0; }
+        .badge.order_status { background: #f3e5f5; color: #6a1b9a; }
+        .badge.general { background: #e8f5e9; color: #2e7d32; }
+
+        .badge.high { background: #ffcdd2; color: #b71c1c; }
+        .badge.normal { background: #c8e6c9; color: #2e7d32; }
+
+        .badge.escalated { background: #ff5252; color: white; }
+        .badge.resolved { background: #4caf50; color: white; }
+
+        .customer-info {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .query-text {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-style: italic;
+            color: #444;
+        }
+
+        .resolution-flow {
+            margin: 15px 0;
+        }
+
+        .resolution-flow h4 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .resolution-step {
+            padding: 8px 0;
+            padding-left: 20px;
+            color: #666;
+            border-left: 3px solid #667eea;
+            margin-bottom: 5px;
+        }
+
+        .response-box {
+            background: #f9f9f9;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        .response-box h4 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .response-text {
+            color: #555;
+            line-height: 1.6;
+            white-space: pre-wrap;
+        }
+
+        .filter-controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .filter-controls select {
+            padding: 10px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+
+        .filter-controls select:hover {
+            border-color: #667eea;
+        }
+
+        canvas {
+            max-height: 300px;
+        }
+
+        .score-badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .score-high { background: #4caf50; color: white; }
+        .score-medium { background: #ff9800; color: white; }
+        .score-low { background: #f44336; color: white; }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎫 Customer Support Ticketing Dashboard</h1>
+            <p>Real-time ticket monitoring and analytics</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Tickets</h3>
+                <div class="number" id="totalTickets">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Escalated</h3>
+                <div class="number" id="escalatedTickets" style="color: #f44336;">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Auto-Resolved</h3>
+                <div class="number" id="resolvedTickets" style="color: #4caf50;">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Avg Quality Score</h3>
+                <div class="number" id="avgScore">0.0</div>
+            </div>
+        </div>
+
+        <div class="charts-grid">
+            <div class="chart-card">
+                <h2>Intent Distribution</h2>
+                <canvas id="intentChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <h2>Priority Breakdown</h2>
+                <canvas id="priorityChart"></canvas>
+            </div>
+        </div>
+
+        <div class="tickets-container">
+            <h2>Ticket Details</h2>
+            <div class="filter-controls">
+                <select id="filterIntent">
+                    <option value="all">All Intents</option>
+                    <option value="returns">Returns</option>
+                    <option value="billing">Billing</option>
+                    <option value="tech_support">Tech Support</option>
+                    <option value="order_status">Order Status</option>
+                    <option value="general">General</option>
+                </select>
+                <select id="filterPriority">
+                    <option value="all">All Priorities</option>
+                    <option value="high">High Priority</option>
+                    <option value="normal">Normal Priority</option>
+                </select>
+                <select id="filterStatus">
+                    <option value="all">All Status</option>
+                    <option value="escalated">Escalated</option>
+                    <option value="resolved">Auto-Resolved</option>
+                </select>
+            </div>
+            <div id="ticketsDisplay"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script>
+        // Sample data - this would be loaded from your JSON file
+        const sampleTickets = [
+            {
+                ticket_id: "TKT24910",
+                customer_id: "CUST001",
+                customer_name: "Alice Johnson",
+                query: "I received my laptop but it's not what I ordered. I want to return it and get a refund immediately!",
+                intent: "returns",
+                priority: "high",
+                sentiment_score: 0.90,
+                escalated: false,
+                resolution_notes: [
+                    "Intent classified as: returns (Priority: high)",
+                    "Returns agent initiated return process",
+                    "✓ Auto-approved (quality score: 0.90)",
+                    "✓ Response approved and sent to customer"
+                ],
+                final_response: "Dear Alice Johnson,\n\nI sincerely apologize for any issues with your order. I'm here to help you with the return process.\n\n**Return Policy:**\n- Return window: 30 days from delivery\n- Condition required: unused and in original packaging\n- Refund processing: 5-7 business days\n- Return shipping: free for premium members\n\nBest regards,\nReturns Department"
+            },
+            {
+                ticket_id: "TKT73738",
+                customer_id: "CUST002",
+                customer_name: "Bob Smith",
+                query: "My headphones haven't arrived yet. Where is my order ORD12346?",
+                intent: "order_status",
+                priority: "normal",
+                sentiment_score: 0.80,
+                escalated: false,
+                resolution_notes: [
+                    "Intent classified as: order_status (Priority: normal)",
+                    "General agent handled query",
+                    "✓ Auto-approved (quality score: 0.80)",
+                    "✓ Response approved and sent to customer"
+                ],
+                final_response: "Hi Bob Smith,\n\nThank you for contacting us!\n\nYour order ORD12346 for headphones is currently in transit. Expected delivery: 2-3 business days.\n\nBest regards,\nCustomer Support Team"
+            },
+            {
+                ticket_id: "TKT63562",
+                customer_id: "CUST004",
+                customer_name: "David Brown",
+                query: "Why am I being charged late fees? This is ridiculous! I paid on time!",
+                intent: "billing",
+                priority: "high",
+                sentiment_score: 0.95,
+                escalated: false,
+                resolution_notes: [
+                    "Intent classified as: billing (Priority: high)",
+                    "Billing agent handled query. Balance: $-120.5",
+                    "✓ Auto-approved (quality score: 0.95)",
+                    "✓ Response approved and sent to customer"
+                ],
+                final_response: "Dear David Brown,\n\nI understand your concern about the late fees. Let me review your account.\n\n**Current Balance:** $120.50\n\nIf you believe there's an error, please provide payment confirmation.\n\nBest regards,\nBilling Support"
+            },
+            {
+                ticket_id: "TKT99204",
+                customer_id: "CUST003",
+                customer_name: "Carol White",
+                query: "My WiFi keeps disconnecting. Can you help me troubleshoot?",
+                intent: "tech_support",
+                priority: "normal",
+                sentiment_score: 0.95,
+                escalated: false,
+                resolution_notes: [
+                    "Intent classified as: tech_support (Priority: normal)",
+                    "Tech support agent provided troubleshooting steps",
+                    "✓ Auto-approved (quality score: 0.95)",
+                    "✓ Response approved and sent to customer"
+                ],
+                final_response: "Hi Carol White,\n\n**Troubleshooting Steps:**\n1. Restart your router\n2. Check if other devices connect\n3. Verify password\n\nBest regards,\nTechnical Support Team"
+            },
+            {
+                ticket_id: "TKT45612",
+                customer_id: "CUST005",
+                customer_name: "Emma Davis",
+                query: "When will my monitor ship? I ordered it 2 days ago and it's still processing.",
+                intent: "order_status",
+                priority: "normal",
+                sentiment_score: 0.85,
+                escalated: false,
+                resolution_notes: [
+                    "Intent classified as: order_status (Priority: normal)",
+                    "General agent handled query",
+                    "✓ Auto-approved (quality score: 0.85)",
+                    "✓ Response approved and sent to customer"
+                ],
+                final_response: "Hi Emma Davis,\n\nYour monitor order is being prepared for shipment. Expected ship date: 1-2 business days.\n\nBest regards,\nCustomer Support"
+            },
+            {
+                ticket_id: "TKT78945",
+                customer_id: "CUST006",
+                customer_name: "Frank Miller",
+                query: "The mouse I received is defective. The left click doesn't work properly.",
+                intent: "returns",
+                priority: "high",
+                sentiment_score: 0.88,
+                escalated: false,
+                resolution_notes: [
+                    "Intent classified as: returns (Priority: high)",
+                    "Returns agent initiated return process",
+                    "✓ Auto-approved (quality score: 0.88)",
+                    "✓ Response approved and sent to customer"
+                ],
+                final_response: "Dear Frank Miller,\n\nI apologize for the defective mouse. We'll process a replacement immediately.\n\nReturn instructions will be sent within 24 hours.\n\nBest regards,\nReturns Department"
+            },
+            {
+                ticket_id: "TKT32165",
+                customer_id: "CUST007",
+                customer_name: "Grace Wilson",
+                query: "My app keeps crashing every time I try to log in. Please help!",
+                intent: "tech_support",
+                priority: "high",
+                sentiment_score: 0.92,
+                escalated: false,
+                resolution_notes: [
+                    "Intent classified as: tech_support (Priority: high)",
+                    "Tech support agent provided troubleshooting steps",
+                    "✓ Auto-approved (quality score: 0.92)",
+                    "✓ Response approved and sent to customer"
+                ],
+                final_response: "Hi Grace Wilson,\n\n**Try these steps:**\n1. Clear app cache\n2. Update to latest version\n3. Reinstall if needed\n\nBest regards,\nTechnical Support"
+            },
+            {
+                ticket_id: "TKT65498",
+                customer_id: "CUST008",
+                customer_name: "Henry Taylor",
+                query: "I can't afford to pay $200 right now. Can I set up a payment plan?",
+                intent: "billing",
+                priority: "normal",
+                sentiment_score: 0.93,
+                escalated: false,
+                resolution_notes: [
+                    "Intent classified as: billing (Priority: normal)",
+                    "Billing agent handled query. Balance: $-200.0",
+                    "✓ Auto-approved (quality score: 0.93)",
+                    "✓ Response approved and sent to customer"
+                ],
+                final_response: "Dear Henry Taylor,\n\nYes, we can set up a payment plan for your $200 balance.\n\nPayment plans available for balances over $100.\n\nBest regards,\nBilling Support"
+            }
+        ];
+
+        let allTickets = sampleTickets;
+        let filteredTickets = sampleTickets;
+
+        // Update statistics
+        function updateStats() {
+            const total = allTickets.length;
+            const escalated = allTickets.filter(t => t.escalated).length;
+            const resolved = total - escalated;
+            const avgScore = (allTickets.reduce((sum, t) => sum + t.sentiment_score, 0) / total).toFixed(2);
+
+            document.getElementById('totalTickets').textContent = total;
+            document.getElementById('escalatedTickets').textContent = escalated;
+            document.getElementById('resolvedTickets').textContent = resolved;
+            document.getElementById('avgScore').textContent = avgScore;
+        }
+
+        // Create charts
+        function createCharts() {
+            // Intent distribution
+            const intentCounts = {};
+            allTickets.forEach(t => {
+                intentCounts[t.intent] = (intentCounts[t.intent] || 0) + 1;
+            });
+
+            const intentCtx = document.getElementById('intentChart').getContext('2d');
+            new Chart(intentCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: Object.keys(intentCounts).map(k => k.replace('_', ' ').toUpperCase()),
+                    datasets: [{
+                        data: Object.values(intentCounts),
+                        backgroundColor: [
+                            '#c62828',
+                            '#e65100',
+                            '#1565c0',
+                            '#6a1b9a',
+                            '#2e7d32'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+
+            // Priority breakdown
+            const priorityCounts = {};
+            allTickets.forEach(t => {
+                priorityCounts[t.priority] = (priorityCounts[t.priority] || 0) + 1;
+            });
+
+            const priorityCtx = document.getElementById('priorityChart').getContext('2d');
+            new Chart(priorityCtx, {
+                type: 'bar',
+                data: {
+                    labels: Object.keys(priorityCounts).map(k => k.toUpperCase()),
+                    datasets: [{
+                        label: 'Number of Tickets',
+                        data: Object.values(priorityCounts),
+                        backgroundColor: ['#f44336', '#4caf50']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 1
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        }
+
+        // Display tickets
+        function displayTickets() {
+            const container = document.getElementById('ticketsDisplay');
+            container.innerHTML = '';
+
+            if (filteredTickets.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #999; padding: 40px;">No tickets match the selected filters.</p>';
+                return;
+            }
+
+            filteredTickets.forEach(ticket => {
+                const scoreClass = ticket.sentiment_score >= 0.85 ? 'score-high' : 
+                                  ticket.sentiment_score >= 0.70 ? 'score-medium' : 'score-low';
+
+                const card = document.createElement('div');
+                card.className = 'ticket-card';
+                card.innerHTML = `
+                    <div class="ticket-header">
+                        <div class="ticket-id">${ticket.ticket_id}</div>
+                        <div>
+                            <span class="badge ${ticket.intent}">${ticket.intent.replace('_', ' ')}</span>
+                            <span class="badge ${ticket.priority}">${ticket.priority}</span>
+                            <span class="badge ${ticket.escalated ? 'escalated' : 'resolved'}">
+                                ${ticket.escalated ? 'Escalated' : 'Resolved'}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="customer-info">
+                        <strong>Customer:</strong> ${ticket.customer_name} (${ticket.customer_id})
+                        <span class="score-badge ${scoreClass}">Quality: ${ticket.sentiment_score.toFixed(2)}</span>
+                    </div>
+                    <div class="query-text">"${ticket.query}"</div>
+                    <div class="resolution-flow">
+                        <h4>Resolution Flow:</h4>
+                        ${ticket.resolution_notes.map(note => `<div class="resolution-step">${note}</div>`).join('')}
+                    </div>
+                    <div class="response-box">
+                        <h4>Final Response:</h4>
+                        <div class="response-text">${ticket.final_response}</div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Filter tickets
+        function filterTickets() {
+            const intentFilter = document.getElementById('filterIntent').value;
+            const priorityFilter = document.getElementById('filterPriority').value;
+            const statusFilter = document.getElementById('filterStatus').value;
+
+            filteredTickets = allTickets.filter(ticket => {
+                const intentMatch = intentFilter === 'all' || ticket.intent === intentFilter;
+                const priorityMatch = priorityFilter === 'all' || ticket.priority === priorityFilter;
+                const statusMatch = statusFilter === 'all' || 
+                                   (statusFilter === 'escalated' && ticket.escalated) ||
+                                   (statusFilter === 'resolved' && !ticket.escalated);
+                
+                return intentMatch && priorityMatch && statusMatch;
+            });
+
+            displayTickets();
+        }
+
+        // Event listeners
+        document.getElementById('filterIntent').addEventListener('change', filterTickets);
+        document.getElementById('filterPriority').addEventListener('change', filterTickets);
+        document.getElementById('filterStatus').addEventListener('change', filterTickets);
+
+        // Initialize
+        updateStats();
+        createCharts();
+        displayTickets();
+
+        // Function to load data from JSON file
+        function loadTicketsFromFile(jsonData) {
+            allTickets = jsonData;
+            filteredTickets = jsonData;
+            updateStats();
+            displayTickets();
+        }
+
+        console.log('Dashboard loaded! To load your own data, use: loadTicketsFromFile(yourJsonData)');
+    </script>
+</body>
+</html>

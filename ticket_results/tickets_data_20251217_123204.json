@@ -1,0 +1,146 @@
+[
+  {
+    "ticket_id": "TKT60887",
+    "customer_id": "CUST001",
+    "customer_name": "Alice Johnson",
+    "query": "I received my laptop but it's not what I ordered. I want to return it and get a refund immediately!",
+    "intent": "returns",
+    "priority": "high",
+    "sentiment_score": 0.9,
+    "escalated": false,
+    "resolution_notes": [
+      "Intent classified as: returns (Priority: high)",
+      "Returns agent initiated return process",
+      "✓ Auto-approved (quality score: 0.90)",
+      "✓ Response approved and sent to customer"
+    ],
+    "final_response": "Dear Alice Johnson,\n\nI sincerely apologize for any issues with your order. I'm here to help you with the return process.\n\n**Return Policy:**\n- Return window: 30 days from delivery\n- Condition required: unused and in original packaging\n- Refund processing: 5-7 business days\n- Return shipping: free for premium members\n\n**How to Return Your Item:**\n\n1. **Initiate Return:** We'll email you a return authorization within 24 hours\n2. **Pack the Item:** Use original packaging if possible\n3. **Ship It Back:** Use the prepaid label we provide (or arrange your own shipping)\n4. **Get Your Refund:** Once we receive and inspect the item, your refund will be processed\n\n**What We Need From You:**\n- Order number (if available)\n- Reason for return\n- Photos of the item (if damaged or incorrect)\n\nI've flagged your case for priority processing. You should receive your return instructions within 24 hours.\n\nWe value your business and want to make this right.\n\nBest regards,\nReturns Department",
+    "timestamp": "2025-12-17T12:32:04.778728"
+  },
+  {
+    "ticket_id": "TKT31398",
+    "customer_id": "CUST002",
+    "customer_name": "Bob Smith",
+    "query": "My headphones haven't arrived yet. Where is my order ORD12346?",
+    "intent": "order_status",
+    "priority": "normal",
+    "sentiment_score": 0.8,
+    "escalated": false,
+    "resolution_notes": [
+      "Intent classified as: order_status (Priority: normal)",
+      "General agent handled query",
+      "✓ Auto-approved (quality score: 0.80)",
+      "✓ Response approved and sent to customer"
+    ],
+    "final_response": "Hi Bob Smith,\n\nThank you for contacting us!\n\nI'm here to help with your inquiry. To provide you with the most accurate information, could you please provide:\n- Your order number (if this is order-related)\n- A brief description of what you need assistance with\n- Any relevant dates or details\n\nOur team is committed to resolving your concern as quickly as possible.\n\nBest regards,\nCustomer Support Team",
+    "timestamp": "2025-12-17T12:32:04.778728"
+  },
+  {
+    "ticket_id": "TKT82072",
+    "customer_id": "CUST004",
+    "customer_name": "David Brown",
+    "query": "Why am I being charged late fees? This is ridiculous! I paid on time!",
+    "intent": "billing",
+    "priority": "high",
+    "sentiment_score": 0.9500000000000001,
+    "escalated": false,
+    "resolution_notes": [
+      "Intent classified as: billing (Priority: high)",
+      "Billing agent handled query. Balance: $-120.5",
+      "✓ Auto-approved (quality score: 0.95)",
+      "✓ Response approved and sent to customer"
+    ],
+    "final_response": "Dear David Brown,\n\nThank you for contacting us regarding your billing concern.\n\n**Current Account Status:**\n- Account Balance: $120.50 (amount owed)\n- Account Tier: Standard\n\nI understand you have questions about the charges on your account. Let me provide some clarity:\n\n**Our Billing Policy:**\n- Payment is due within 15 days of invoice\n- Initial late fee: $10 after the due date\n- Additional fees: $5 per week thereafter\n\n**Available Options:**\n1. Make a one-time payment to clear your balance\n2. Set up a payment plan (available for balances over $100)\n3. Contact us to discuss your specific situation\n\nIf you believe there has been an error, please provide:\n- Date of your payment\n- Payment confirmation number\n- Any relevant documentation\n\nWe're here to help resolve this fairly and quickly.\n\nBest regards,\nBilling Support Team",
+    "timestamp": "2025-12-17T12:32:04.778728"
+  },
+  {
+    "ticket_id": "TKT44698",
+    "customer_id": "CUST003",
+    "customer_name": "Carol White",
+    "query": "My WiFi keeps disconnecting. Can you help me troubleshoot?",
+    "intent": "tech_support",
+    "priority": "normal",
+    "sentiment_score": 0.9500000000000001,
+    "escalated": false,
+    "resolution_notes": [
+      "Intent classified as: tech_support (Priority: normal)",
+      "Tech support agent provided troubleshooting steps",
+      "✓ Auto-approved (quality score: 0.95)",
+      "✓ Response approved and sent to customer"
+    ],
+    "final_response": "Hi Carol White,\n\nI'd be happy to help you resolve your technical issue! As a premium member, you have access to our technical support with 2 hours response time.\n\n**Troubleshooting Steps:**\n\nRestart router, check if other devices connect, verify password\n\n**Additional Recommendations:**\n- Ensure your device/app is updated to the latest version\n- Check your internet connection if the issue is online\n- Restart your device after making changes\n\n**Next Steps:**\nPlease try these troubleshooting steps and let us know if the issue persists. If you continue to experience problems:\n- Reply to this email with details of what you've tried\n- Include any error messages you're seeing\n- Our team will prioritize your case\n\nWe're committed to getting you back up and running quickly!\n\nBest regards,\nTechnical Support Team",
+    "timestamp": "2025-12-17T12:32:04.778728"
+  },
+  {
+    "ticket_id": "TKT50573",
+    "customer_id": "CUST005",
+    "customer_name": "Emma Davis",
+    "query": "When will my monitor ship? I ordered it 2 days ago and it's still processing.",
+    "intent": "order_status",
+    "priority": "normal",
+    "sentiment_score": 0.8,
+    "escalated": false,
+    "resolution_notes": [
+      "Intent classified as: order_status (Priority: normal)",
+      "General agent handled query",
+      "✓ Auto-approved (quality score: 0.80)",
+      "✓ Response approved and sent to customer"
+    ],
+    "final_response": "Hi Emma Davis,\n\nThank you for contacting us!\n\nI'm here to help with your inquiry. To provide you with the most accurate information, could you please provide:\n- Your order number (if this is order-related)\n- A brief description of what you need assistance with\n- Any relevant dates or details\n\nOur team is committed to resolving your concern as quickly as possible.\n\nBest regards,\nCustomer Support Team",
+    "timestamp": "2025-12-17T12:32:04.778728"
+  },
+  {
+    "ticket_id": "TKT71384",
+    "customer_id": "CUST006",
+    "customer_name": "Frank Miller",
+    "query": "The mouse I received is defective. The left click doesn't work properly.",
+    "intent": "general",
+    "priority": "normal",
+    "sentiment_score": 0.8,
+    "escalated": false,
+    "resolution_notes": [
+      "Intent classified as: general (Priority: normal)",
+      "General agent handled query",
+      "✓ Auto-approved (quality score: 0.80)",
+      "✓ Response approved and sent to customer"
+    ],
+    "final_response": "Hi Frank Miller,\n\nThank you for contacting us!\n\nI'm here to help with your inquiry. To provide you with the most accurate information, could you please provide:\n- Your order number (if this is order-related)\n- A brief description of what you need assistance with\n- Any relevant dates or details\n\nOur team is committed to resolving your concern as quickly as possible.\n\nBest regards,\nCustomer Support Team",
+    "timestamp": "2025-12-17T12:32:04.778728"
+  },
+  {
+    "ticket_id": "TKT23689",
+    "customer_id": "CUST007",
+    "customer_name": "Grace Wilson",
+    "query": "My app keeps crashing every time I try to log in. Please help!",
+    "intent": "tech_support",
+    "priority": "normal",
+    "sentiment_score": 0.9500000000000001,
+    "escalated": false,
+    "resolution_notes": [
+      "Intent classified as: tech_support (Priority: normal)",
+      "Tech support agent provided troubleshooting steps",
+      "✓ Auto-approved (quality score: 0.95)",
+      "✓ Response approved and sent to customer"
+    ],
+    "final_response": "Hi Grace Wilson,\n\nI'd be happy to help you resolve your technical issue! As a premium member, you have access to our technical support with 2 hours response time.\n\n**Troubleshooting Steps:**\n\nClear cache, update app to latest version, reinstall if needed\n\n**Additional Recommendations:**\n- Ensure your device/app is updated to the latest version\n- Check your internet connection if the issue is online\n- Restart your device after making changes\n\n**Next Steps:**\nPlease try these troubleshooting steps and let us know if the issue persists. If you continue to experience problems:\n- Reply to this email with details of what you've tried\n- Include any error messages you're seeing\n- Our team will prioritize your case\n\nWe're committed to getting you back up and running quickly!\n\nBest regards,\nTechnical Support Team",
+    "timestamp": "2025-12-17T12:32:04.778728"
+  },
+  {
+    "ticket_id": "TKT20698",
+    "customer_id": "CUST008",
+    "customer_name": "Henry Taylor",
+    "query": "I can't afford to pay $200 right now. Can I set up a payment plan?",
+    "intent": "billing",
+    "priority": "normal",
+    "sentiment_score": 0.9500000000000001,
+    "escalated": false,
+    "resolution_notes": [
+      "Intent classified as: billing (Priority: normal)",
+      "Billing agent handled query. Balance: $-200.0",
+      "✓ Auto-approved (quality score: 0.95)",
+      "✓ Response approved and sent to customer"
+    ],
+    "final_response": "Dear Henry Taylor,\n\nThank you for contacting us regarding your billing concern.\n\n**Current Account Status:**\n- Account Balance: $200.00 (amount owed)\n- Account Tier: Standard\n\nI understand you have questions about the charges on your account. Let me provide some clarity:\n\n**Our Billing Policy:**\n- Payment is due within 15 days of invoice\n- Initial late fee: $10 after the due date\n- Additional fees: $5 per week thereafter\n\n**Available Options:**\n1. Make a one-time payment to clear your balance\n2. Set up a payment plan (available for balances over $100)\n3. Contact us to discuss your specific situation\n\nIf you believe there has been an error, please provide:\n- Date of your payment\n- Payment confirmation number\n- Any relevant documentation\n\nWe're here to help resolve this fairly and quickly.\n\nBest regards,\nBilling Support Team",
+    "timestamp": "2025-12-17T12:32:04.778728"
+  }
+]
